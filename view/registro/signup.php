@@ -10,7 +10,7 @@
 </head>
 
 <?php
-if (isset($_POST['submit'])) {
+/* if (isset($_POST['submit'])) {
     if (empty($_POST['correo']) or empty($_POST['nombre']) or empty($_POST['contrasena'])) {
 
         echo "<script> alert('alguno de los campos estan vacios')</script>";
@@ -33,10 +33,8 @@ if (isset($_POST['submit'])) {
 
     }
 
-}
+} */
 ?>
-
-
 
 <body>
     <!-- Page Preloder -->
@@ -111,20 +109,22 @@ if (isset($_POST['submit'])) {
                     <div class="login__form">
                         <h3>Sign Up</h3>
                         <!-- FORMULAAARIO -->
-                        <form action="signup.php" method="POST">
+                        <form action="signup.php" method="POST" name="nuevo_registro" id="nuevo_registro"
+                            enctype="multipart/form-data" action="procesar.php" onsubmit="guardar(); return false;">
 
                             <div class="input__item ">
-                                <input name="correo" class="col-md-12" type="text" placeholder="Email address">
+                                <input name="correo" id="correo" class="col-md-12" type="text"
+                                    placeholder="Email address">
                                 <span class="icon_mail"></span>
                             </div>
 
                             <div class="input__item">
-                                <input name="nombre" type="text" placeholder="Your Name">
+                                <input name="nombre" id="nombre" type="text" placeholder="Your Name">
                                 <span class="icon_profile"></span>
                             </div>
 
                             <div class="input__item">
-                                <input name="contrasena" type="text" placeholder="Password">
+                                <input name="contrasena" id="contrasena" type="text" placeholder="Password">
                                 <span class="icon_lock"></span>
                             </div>
 
@@ -147,6 +147,14 @@ if (isset($_POST['submit'])) {
     <?php require "../includes/js_scripts.php"; ?>
 
     <!-- Search model end -->
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------->
+    <!--JS------------------------------------------------------------------------------------------------------------------------------------>
+
+    <script src="registro.js"></script>
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------------------------------------------------------------------------->
 
 </body>
 
